@@ -1,0 +1,198 @@
+
+@lightgray : #D7D7D7;
+@speaker_url : 'http://cdn3.iconfinder.com/data/icons/token/Token,%20128x128,%20PNG/Speaker.png';
+
+body {
+	background-image: url('http://imgs.mi9.com/uploads/abstract/4147/abstract-blue-backgrounds-13_1920x1200_71461.jpg') no-repeat;
+
+}
+
+.album {
+
+	// border: 1px solid black;
+	margin: 10px;
+	margin-bottom: 100px;
+
+	h1 {margin: 0; }
+	h2 {color: gray; margin: 0; margin-top: 5px; font-weight: normal;}
+	
+	.album-cover { 
+		width: 300px; 
+		height: 300px; 
+		display: inline-block;
+
+		position: relative;
+		
+
+		.play-button, .enqueue-button { display: none;}
+		&:hover {
+			outline: 5px solid gray;
+
+			.play-button, .enqueue-button {
+				display: block;
+				position: absolute;
+				clear: none;
+				bottom: 20px;
+				border: 2px solid black;
+				width: 100px;
+				height: 80px;
+				background-color: @lightgray;
+
+				text-align: center;
+				padding-top: 40px;
+				font-size: 40px;
+
+				&:hover {
+					// outline: 10px solid black;
+					background-color: black;
+					color: white;				
+					border-color: white;
+
+			}
+
+
+		}
+		.play-button { left: 20px; }
+		.enqueue-button { right: 20px; }
+
+
+		}
+		img {
+			width: 100%;
+			box-shadow: 10px 10px 5px #888;
+		}
+	}
+
+
+	
+	.album-details {
+	 	// h1, h2 { font-family: Georgia; }
+		
+		font-family: Georgia;
+		line-height: 1.4;
+
+		display: inline-block;
+		vertical-align: top;
+		margin-left: 50px;
+
+
+
+
+		// Track Lisiting
+		// img src=http://cdn3.iconfinder.com/data/icons/token/Token,%20128x128,%20PNG/Speaker.png
+
+		// ol { position: relative;}
+
+		li {
+		    // overflow: show;
+			position: relative;
+			.title, .play-button, .enqueue-button, .duration , .duration-spacer { display: inline-block; }
+		   
+		    .duration { 
+		 		position: absolute;
+		 		top: 0;
+		 		right: 0;
+		     }
+		     .duration-spacer { width: 4em; }
+		    
+			&:hover {
+				outline: 1px solid gray;
+				background-color: @lightgray;
+
+				.play-button, .enqueue-button { visibility: visible; } 
+
+			}
+
+			.play-button, .enqueue-button, .now-playing { display:inline-block; }
+			.now-playing {
+				width: 20px;
+				height: 20px;
+				background-image: url(http://cdn3.iconfinder.com/data/icons/token/Token,%20128x128,%20PNG/Speaker.png);
+				background-size: 20px;
+			}
+			.play-button, .enqueue-button {	visibility: hidden; background-color: gray; width: 20px; text-align: center; }
+
+			.play-button:hover, .enqueue-button:hover {
+				outline: 5px solid black;
+				background-color: black;
+				color: white;	
+			}
+
+
+		}
+		
+	}
+}
+
+
+			// 	<div class='current-track'>
+			// 		<div class='title'>Dickens Dublin</div>
+			// 		<div class='artist'>Loreena McKinnet</div>
+			// 	<div class='elapsed'>1:25</div>
+			// 	<div class='duration'>3:17</div>
+			// """
+
+.player {
+	position: fixed;
+	bottom: 0;
+	left: 20px;
+	min-width: 600px;
+	height: 100px;
+	border: 1px solid black;
+	background-color: @lightgray;
+
+	.playlist { display: none; }
+
+	.play-pause {
+		position: absolute;
+		width: 58px;
+		height: 58px;
+		bottom: 20px;
+		left: 20px;
+		border: 1px solid gray;
+		background-color: white;
+	}
+
+	.current-track {
+		display: inline-block;
+		margin-left: 100px;
+	
+		h1 {
+			margin-bottom: 0;
+		}
+		h2 { 
+			color: gray; 
+			margin-top: 0;
+		}
+	}
+
+	.elapsed {
+		display: inline-block;
+		
+		font-size: 20px;
+		
+		// vertical-align: top;
+		
+		margin: 32px;
+	}
+	&:hover .playlist {
+		display: block;
+		position: absolute;
+		top: -300px;
+		left: -1px;
+		height: 298px;
+		width: 100%;
+		border: 1px solid black;
+		background-color: @lightgray;
+		overflow: scroll;
+
+		li.playing { 
+			border: 2px solid green;
+			list-style: square;
+		 }
+
+		li:hover { 
+			outline: 1px solid gray;
+		}
+	}
+}
